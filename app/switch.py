@@ -17,7 +17,7 @@ def change_brightness(direction):
 	brightness = colours[2]
 	brightness_current = get_state(lifx.Brightness, brightness)
 	brightness_next = get_next_element(brightness_current, brightness_list, direction)
-	print colour_next
+	print brightness_next
 	brightness_next = eval("lifx.Brightness." + brightness_next)
 	print brightness_next
 	lights.set_colour(hue, brightness = brightness_next)
