@@ -1,4 +1,5 @@
 import operator
+from collections import OrderedDict
 
 def get_next_element(current_item, li, direction):
     index = li.index(current_item)
@@ -27,8 +28,9 @@ def get_state(light_property, target_value):
 		return min(light_property.__dict__, key=lambda y:abs(light_property.__dict__[y]-target_value))
 
 def listify(dict):
+	dict=OrderedDict()
 	entries_to_remove(dict)
 	dictlist = []
-	for key, value in dict.iteritems():
+	for key, value in sorted(dict.iteritems()):
 		dictlist.append(key)
 	return dictlist

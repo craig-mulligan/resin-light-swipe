@@ -8,10 +8,8 @@ from helpers import *
 lights = lifx.Lifx()
 
 # Settings 
-brightness_list = listify(lifx.Brightness.__dict__)
-colour_list = listify(lifx.Colour.__dict__)
-print brightness_list
-print colour_list
+brightness_list = ['DIM', 'MOOD', 'NORMAL', 'FULL']
+colour_list = ['RED','ORANGE', 'YELLOW', 'WHITE','GREEN','PURPLE', 'BLUE']
 
 def change_brightness(direction):
 	colours = lights.get_colours()
