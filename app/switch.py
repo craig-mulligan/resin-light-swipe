@@ -51,6 +51,4 @@ def flick(start, finish):
     elif start == "east" and finish == "west":
     	change_colour(operator.sub)
 
-flick("east", "west")
-
 signal.pause()
