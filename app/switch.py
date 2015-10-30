@@ -45,12 +45,24 @@ def tap(position):
 def flick(start, finish):
     print('Got a flick!', start, finish)
     if start == "north" and finish == "south":
-    	change_brightness(operator.sub)
+    	try:
+    		change_brightness(operator.sub)
+    	except: 
+  			pass
     elif start == "south" and finish == "north":
-    	change_brightness(operator.add)
+    	try:
+    		change_brightness(operator.add)
+    	except: 
+  			pass
     elif start == "west" and finish == "east":
-    	change_colour(operator.add)
+    	try:
+    		change_colour(operator.add)
+    	except: 
+  			pass
     elif start == "east" and finish == "west":
-    	change_colour(operator.sub)
-
+    	try:
+    		change_colour(operator.sub)
+    	except: 
+  			pass
+  			
 signal.pause()
