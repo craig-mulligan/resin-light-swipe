@@ -8,11 +8,6 @@ from helpers import *
 lights = lifx.Lifx()
 
 # Settings 
-def listify():
-for key, value in dict.iteritems():
-    temp = [key,value]
-    dictlist.append(temp)
-
 brightness_list = listify(lifx.Brightness.__dict__)
 colour_list = listify(lifx.Colour.__dict__)
 
