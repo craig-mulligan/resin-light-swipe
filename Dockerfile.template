@@ -3,7 +3,7 @@ FROM resin/%%RESIN_MACHINE_NAME%%-node:latest
 #Enable systemd init system in the container
 ENV INITSYSTEM on
 
-RUN apt-get update && apt-get install python-smbus python-pip python-dev
+RUN apt-get update && apt-get install -y python-smbus python-pip python-dev
 
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
