@@ -31,11 +31,9 @@ def tap(position):
 @skywriter.flick()
 def flick(start, finish):
     print('Got a flick!', start, finish)
-    if start == "north" && finish == "south":
-    	try:
-    		change_brightness(operator.sub)
-    elif start == "south" && finish == "north":
-    	try:
-    		change_brightness(operator.add)
+    if start == "north" and finish == "south":
+    	change_brightness(operator.sub)
+    elif start == "south" and finish == "north":
+    	change_brightness(operator.add)
 
 signal.pause()
