@@ -9,6 +9,7 @@ lights = lifx.Lifx()
 
 # Settings 
 brightness_list = ["OFF", "DIM", "MOOD", "NORMAL", "FULL"]
+colour_list = ["RED", "ORANGE", "YELLOW", "ORANGE", "GREEN", "BLUE"]
 
 def change_brightness(direction):
 	colours = lights.get_colours()
@@ -19,6 +20,16 @@ def change_brightness(direction):
 	brightness_next = eval("lifx.Brightness." + brightness_next)
 	print brightness_next
 	lights.set_colour(hue, brightness = brightness_next)
+
+def change_colour(direction):
+	colours = lights.get_colours()
+	hue = colours[0]
+	brightness = colours[2]
+	colour_current = get_state(lifx.Colour, hue)
+	colour_next = get_next_element(colour_current, colour_list, direction)
+	colour_next = eval("lifx.Colour." + colour_next)
+	print colour_next
+	lights.set_colour(colour_next, brightness = brightness)
 
 @skywriter.tap()
 def tap(position):
@@ -35,5 +46,11 @@ def flick(start, finish):
     	change_brightness(operator.sub)
     elif start == "south" and finish == "north":
     	change_brightness(operator.add)
+    elif start == "west" and finish == "east":
+    	change_colour(operator.add)
+    elif start == "east" and finish == "west":
+    	change_colour(operator.sub)
+
+flick("east", "west")
 
 signal.pause()

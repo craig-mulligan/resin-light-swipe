@@ -41,8 +41,11 @@ class Colour:
     RED = 0
     ORANGE = 5000
     YELLOW = 8000
+    WHITE = 6500
     GREEN = 18000
+    PURPLE = 28000
     BLUE = 42720
+    
 
 class Brightness:
     OFF = 0
@@ -50,4 +53,3 @@ class Brightness:
     MOOD = 25000
     NORMAL = 50000
     FULL = 65000
-
