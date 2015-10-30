@@ -46,9 +46,8 @@ class Colour:
 
 class Brightness:
     OFF = 0
-    DIM = 1000
-    MOOD = 2500
-    NORMAL = 6000
+    DIM = 10000
+    MOOD = 25000
+    NORMAL = 50000
     FULL = 65000
-
 
