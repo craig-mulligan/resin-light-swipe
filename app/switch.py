@@ -10,6 +10,8 @@ lights = lifx.Lifx()
 # Settings 
 brightness_list = listify(lifx.Brightness.__dict__)
 colour_list = listify(lifx.Colour.__dict__)
+print brightness_list
+print colour_list
 
 def change_brightness(direction):
 	colours = lights.get_colours()
