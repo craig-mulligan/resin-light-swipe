@@ -171,7 +171,8 @@ class Packet:
 
         packet_type = PacketCode.get_packet_type(header_data.code)
         if packet_type is None:
-            raise Exception('No packet type defined.')
+            # raise Exception('No packet type defined.')
+            print('No packet type defined.')
 
         payload_data = None
         if packet_type.fmt is not None:
